@@ -43,13 +43,13 @@ export function ElderLawSection() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white hover:shadow-lg border border-border rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <feature.icon className="h-7 w-7 text-primary" />
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <feature.icon className="h-7 w-7 text-accent" />
               </div>
-              <h4 className="font-semibold text-white mb-1">{feature.title}</h4>
-              <p className="text-sm text-white/60">{feature.description}</p>
+              <h4 className="font-semibold text-foreground mb-1">{feature.title}</h4>
+              <p className="text-sm text-foreground/60">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -58,12 +58,7 @@ export function ElderLawSection() {
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Left Content - 3 columns */}
           <div className="lg:col-span-3">
-            <div className="inline-block mb-4">
-              <span className="text-primary font-medium text-sm tracking-widest uppercase">
-                Elder Law Services
-              </span>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-8 leading-tight">
+            <h2 className="font-serif text-4xl md:text-5xl font-semibold mb-8 leading-tight text-white">
               What to Expect from an Elder Law Attorney
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-white/80">
