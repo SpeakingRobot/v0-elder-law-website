@@ -95,23 +95,20 @@ export function ElderLawSection() {
 
           {/* Right Card - 2 columns */}
           <div className="lg:col-span-2">
-            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 relative overflow-hidden">
-              {/* Decorative element */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-              
-              <h3 className="font-serif text-2xl mb-8 relative">
+            <div className="bg-white rounded-2xl p-8 border border-border shadow-lg relative overflow-hidden">
+              <h3 className="font-serif text-2xl text-foreground mb-8">
                 How Can an Elder Law Attorney Help?
               </h3>
-              <ul className="space-y-4 relative">
+              <ul className="space-y-4">
                 {services.map((service, index) => (
                   <li 
                     key={index} 
                     className="flex items-start gap-4 group"
                   >
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/40 transition-colors">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5 group-hover:bg-primary/20 transition-colors">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
                     </span>
-                    <span className="text-white/85 group-hover:text-white transition-colors leading-relaxed">
+                    <span className="text-foreground/80 group-hover:text-foreground transition-colors leading-relaxed">
                       {service}
                     </span>
                   </li>
@@ -119,7 +116,7 @@ export function ElderLawSection() {
               </ul>
 
               {/* CTA at bottom */}
-              <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="mt-8 pt-6 border-t border-border">
                 <a 
                   href="#contact" 
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
