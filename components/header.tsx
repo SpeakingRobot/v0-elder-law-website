@@ -22,8 +22,9 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex flex-col">
-            <span className="font-serif text-xl font-bold text-accent tracking-tight">
-              Law Offices
+            <span className="font-serif text-xl font-bold tracking-tight">
+              <span className="text-accent">Attorney</span>
+              <span className="text-primary"> Deep</span>
             </span>
             <span className="text-xs text-muted-foreground tracking-widest uppercase">
               Elder Law & Estate Planning
