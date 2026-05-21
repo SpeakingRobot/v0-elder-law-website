@@ -1,10 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-20">
+    <section className="relative min-h-[85vh] flex items-center pt-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -14,34 +15,43 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-3xl">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight text-balance">
-            Protecting Everything You Own and Everyone You Love
+      <div className="relative z-10 container mx-auto px-4 md:px-8 py-20">
+        <div className="max-w-2xl">
+          <div className="mb-6 inline-block">
+            <span className="text-accent font-medium text-sm tracking-widest uppercase">
+              Trusted Legal Guidance
+            </span>
+          </div>
+          
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-tight text-balance">
+            Protect Your Legacy
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
-            Experienced Elder Law and Estate Planning attorneys dedicated to helping 
-            families in Nassau County, NY plan for the future with confidence.
+          
+          <p className="mt-8 text-lg text-white/85 leading-relaxed max-w-xl font-light">
+            Expert estate planning and elder law services for families in Nassau County. We help you secure your financial future and ensure your loved ones are protected.
           </p>
+          
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Button 
               asChild 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 h-14"
             >
-              <Link href="#contact">Schedule a Consultation</Link>
+              <Link href="#contact" className="flex items-center gap-2">
+                Start Your Consultation
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </Button>
             <Button 
               asChild 
               size="lg" 
-              variant="outline" 
-              className="border-white text-white bg-transparent hover:bg-white/10 text-base px-8"
+              className="border-2 border-white/30 text-white bg-transparent hover:bg-white/10 font-semibold px-8 h-14"
             >
-              <Link href="#services">Our Services</Link>
+              <Link href="#services">Explore Services</Link>
             </Button>
           </div>
         </div>
