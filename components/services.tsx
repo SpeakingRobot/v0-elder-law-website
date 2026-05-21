@@ -1,54 +1,49 @@
-import { FileText, Scale, Heart, Users, Building2, ShieldCheck, ArrowRight } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { FileText, Scale, Heart, Users, Building2, ShieldCheck } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const services = [
   {
     icon: FileText,
-    title: "Wills & Trusts",
-    description: "Secure your legacy with expertly drafted wills and trusts that protect your assets and ensure your wishes are honored.",
+    title: "Wills and Trusts",
+    description: "Planning for the future through the use of Wills and Trusts is a great way to reduce the stress your family will go through once you are gone.",
   },
   {
     icon: Scale,
-    title: "Probate Administration",
-    description: "Navigate the probate process with professional guidance, minimizing delays and complications for your family.",
+    title: "Probate",
+    description: "If your family has experienced the loss of a family member, our law firm can assist you with the legal process that occurs when a loved one passes away.",
   },
   {
     icon: Heart,
-    title: "Medicaid Planning",
-    description: "Strategic planning to help you preserve assets while qualifying for Medicaid benefits when needed.",
+    title: "Medicaid & Elder Law Planning",
+    description: "It&apos;s understandable that you don&apos;t want to discuss the not-so-distant future and the inevitable. But the longer you put it off, the more difficult it will be on your family.",
   },
   {
     icon: Users,
     title: "Special Needs Planning",
-    description: "Comprehensive planning for family members with disabilities to ensure their long-term financial security.",
+    description: "Families who have a family member with a disability must plan for the future very carefully. How assets are left after your death can have a tremendous impact on quality of life.",
   },
   {
     icon: Building2,
-    title: "Business Succession",
-    description: "Seamless transition planning for your business, protecting both your family and your enterprise.",
+    title: "Business Planning",
+    description: "As more Americans become entrepreneurs, they discover that wise business planning is essential to their success today and their financial security tomorrow.",
   },
   {
     icon: ShieldCheck,
-    title: "Powers of Attorney",
-    description: "Establish healthcare and financial representatives to handle your affairs if you become incapacitated.",
+    title: "Incapacity Planning",
+    description: "Incapacity planning is a broad area of law that covers how you are cared for if you become physically or mentally unable to care for yourself.",
   },
 ]
 
 export function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="mb-16">
-          <div className="inline-block mb-4">
-            <span className="text-primary font-medium text-sm tracking-widest uppercase">
-              Our Expertise
-            </span>
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight max-w-3xl">
-            Comprehensive Legal Solutions for Your Family
+    <section id="services" className="py-20 md:py-28 bg-muted">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="font-serif text-accent text-3xl md:text-4xl font-semibold mb-4">
+            Practice Areas
           </h2>
-          <p className="text-foreground/60 max-w-2xl text-lg">
-            From estate planning to elder care, we provide trusted legal guidance tailored to your unique needs.
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive legal services tailored to protect you and your loved ones
           </p>
         </div>
 
@@ -56,22 +51,20 @@ export function Services() {
           {services.map((service) => (
             <Card 
               key={service.title} 
-              className="bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
+              className="bg-card border-border hover:shadow-lg transition-shadow duration-300"
             >
-              <CardContent className="p-8">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors">
-                  <service.icon className="h-6 w-6 text-accent" />
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <service.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-serif text-xl text-foreground mb-3">
+                <CardTitle className="font-serif text-xl text-accent">
                   {service.title}
-                </h3>
-                <p className="text-foreground/65 leading-relaxed mb-4">
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-muted-foreground leading-relaxed">
                   {service.description}
-                </p>
-                <button className="flex items-center gap-2 text-primary font-medium text-sm hover:gap-3 transition-all opacity-0 group-hover:opacity-100">
-                  Learn more
-                  <ArrowRight className="h-4 w-4" />
-                </button>
+                </CardDescription>
               </CardContent>
             </Card>
           ))}
