@@ -32,14 +32,15 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="relative px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-200 rounded-md hover:bg-accent/10 group"
               >
                 {link.label}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent group-hover:w-3/4 transition-all duration-300" />
               </Link>
             ))}
           </nav>
@@ -72,12 +73,12 @@ export function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border">
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-md transition-all duration-200"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
