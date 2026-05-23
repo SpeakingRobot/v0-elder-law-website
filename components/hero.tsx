@@ -1,112 +1,132 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Users, Award } from "lucide-react"
+import { ArrowRight, Shield, Users, Award, FileText, Heart, Scale } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-          alt="Family planning for the future"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/55" />
-      </div>
+    <section className="min-h-[90vh] flex items-center bg-primary pt-16">
+      <div className="container mx-auto px-4 md:px-8 py-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
-          <div className="max-w-2xl">
+          {/* Left Column — Text */}
+          <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-8">
               <Shield className="h-4 w-4 text-accent" />
-              <span className="text-sm font-medium text-white">Protecting Families Since 1998</span>
+              <span className="text-sm font-medium text-white/90">Protecting Families Since 1998</span>
             </div>
 
-            {/* Main Headline */}
+            {/* Headline */}
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-tight text-balance mb-6">
-              Protect Your <span className="text-accent">Legacy</span>, Secure Your <span className="text-accent">Family</span>
+              Protect Your <span className="text-accent">Legacy</span>,{" "}
+              Secure Your <span className="text-accent">Family</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-10 font-light">
+            <p className="text-lg md:text-xl text-white/75 leading-relaxed max-w-xl mb-10 font-light">
               Expert Elder Law and Estate Planning for families in Nassau County, NY. Let us handle the complexity while you focus on what matters most.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 h-14 flex items-center gap-2"
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 h-14"
               >
-                <Link href="#contact">
+                <Link href="#contact" className="flex items-center gap-2">
                   Schedule Free Consultation
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button 
-                asChild 
-                size="lg" 
-                className="border-2 border-white text-white bg-transparent hover:bg-white/10 font-semibold px-8 h-14"
+              <Button
+                asChild
+                size="lg"
+                className="border-2 border-white/40 text-white bg-transparent hover:bg-white/10 font-semibold px-8 h-14"
               >
                 <Link href="#services">Explore Services</Link>
               </Button>
             </div>
 
-            {/* Trust Indicators */}
+            {/* Trust Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
               <div className="flex items-center gap-3">
-                <Users className="h-5 w-5 text-accent" />
+                <Users className="h-5 w-5 text-accent shrink-0" />
                 <div>
                   <div className="font-serif text-xl font-bold text-white">500+</div>
-                  <div className="text-xs text-white/70">Families Served</div>
+                  <div className="text-xs text-white/60">Families Served</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Award className="h-5 w-5 text-accent" />
+                <Award className="h-5 w-5 text-accent shrink-0" />
                 <div>
                   <div className="font-serif text-xl font-bold text-white">25+</div>
-                  <div className="text-xs text-white/70">Years Experience</div>
+                  <div className="text-xs text-white/60">Years Experience</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Shield className="h-5 w-5 text-accent" />
+                <Shield className="h-5 w-5 text-accent shrink-0" />
                 <div>
                   <div className="font-serif text-xl font-bold text-white">98%</div>
-                  <div className="text-xs text-white/70">Client Satisfaction</div>
+                  <div className="text-xs text-white/60">Client Satisfaction</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Visual Element */}
-          <div className="hidden lg:block relative h-full min-h-96">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-accent/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-1/2 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-            
-            {/* Feature Cards */}
-            <div className="relative space-y-4">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-5 hover:bg-white/15 transition-all">
-                <div className="font-semibold text-white mb-2">Wills & Trusts</div>
-                <div className="text-sm text-white/70">Secure your estate for generations</div>
+          {/* Right Column — Image + Floating Cards */}
+          <div className="hidden lg:block relative">
+            {/* Glow */}
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-10 left-0 w-48 h-48 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Main image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[460px]">
+              <Image
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
+                alt="Attorney Deep with clients"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-primary/20" />
+            </div>
+
+            {/* Floating card — top left */}
+            <div className="absolute -left-10 top-8 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3 w-52 border border-border">
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                <FileText className="h-5 w-5 text-accent" />
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-5 hover:bg-white/15 transition-all">
-                <div className="font-semibold text-white mb-2">Medicaid Planning</div>
-                <div className="text-sm text-white/70">Preserve assets, access benefits</div>
+              <div>
+                <div className="font-semibold text-foreground text-sm">Wills & Trusts</div>
+                <div className="text-xs text-muted-foreground">Secure your estate</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-5 hover:bg-white/15 transition-all">
-                <div className="font-semibold text-white mb-2">Elder Law</div>
-                <div className="text-sm text-white/70">Comprehensive care protection</div>
+            </div>
+
+            {/* Floating card — right middle */}
+            <div className="absolute -right-10 top-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3 w-52 border border-border">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <Heart className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <div className="font-semibold text-foreground text-sm">Medicaid Planning</div>
+                <div className="text-xs text-muted-foreground">Preserve your assets</div>
+              </div>
+            </div>
+
+            {/* Floating card — bottom left */}
+            <div className="absolute -left-10 bottom-10 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3 w-52 border border-border">
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                <Scale className="h-5 w-5 text-accent" />
+              </div>
+              <div>
+                <div className="font-semibold text-foreground text-sm">Elder Law</div>
+                <div className="text-xs text-muted-foreground">Comprehensive care</div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
