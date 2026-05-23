@@ -5,26 +5,26 @@ import { ArrowRight, Shield, Users, Award, FileText, Heart, Scale } from "lucide
 
 export function Hero() {
   return (
-    <section className="min-h-[90vh] flex items-center bg-primary pt-16">
+    <section className="min-h-[90vh] flex items-center bg-background pt-16">
       <div className="container mx-auto px-4 md:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Column — Text */}
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-8">
+            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-8">
               <Shield className="h-4 w-4 text-accent" />
-              <span className="text-sm font-medium text-white/90">Protecting Families Since 1998</span>
+              <span className="text-sm font-medium text-accent">Protecting Families Since 1998</span>
             </div>
 
             {/* Headline */}
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-tight text-balance mb-6">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight text-balance mb-6">
               Protect Your <span className="text-accent">Legacy</span>,{" "}
-              Secure Your <span className="text-accent">Family</span>
+              Secure Your <span className="text-primary">Family</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-white/75 leading-relaxed max-w-xl mb-10 font-light">
+            <p className="text-lg md:text-xl text-foreground/60 leading-relaxed max-w-xl mb-10 font-light">
               Expert Elder Law and Estate Planning for families in Nassau County, NY. Let us handle the complexity while you focus on what matters most.
             </p>
 
@@ -43,33 +43,33 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="border-2 border-white/40 text-white bg-transparent hover:bg-white/10 font-semibold px-8 h-14"
+                className="border-2 border-primary text-primary bg-transparent hover:bg-primary/5 font-semibold px-8 h-14"
               >
                 <Link href="#services">Explore Services</Link>
               </Button>
             </div>
 
             {/* Trust Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
               <div className="flex items-center gap-3">
                 <Users className="h-5 w-5 text-accent shrink-0" />
                 <div>
-                  <div className="font-serif text-xl font-bold text-white">500+</div>
-                  <div className="text-xs text-white/60">Families Served</div>
+                  <div className="font-serif text-xl font-bold text-foreground">500+</div>
+                  <div className="text-xs text-foreground/50">Families Served</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Award className="h-5 w-5 text-accent shrink-0" />
+                <Award className="h-5 w-5 text-primary shrink-0" />
                 <div>
-                  <div className="font-serif text-xl font-bold text-white">25+</div>
-                  <div className="text-xs text-white/60">Years Experience</div>
+                  <div className="font-serif text-xl font-bold text-foreground">25+</div>
+                  <div className="text-xs text-foreground/50">Years Experience</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Shield className="h-5 w-5 text-accent shrink-0" />
                 <div>
-                  <div className="font-serif text-xl font-bold text-white">98%</div>
-                  <div className="text-xs text-white/60">Client Satisfaction</div>
+                  <div className="font-serif text-xl font-bold text-foreground">98%</div>
+                  <div className="text-xs text-foreground/50">Client Satisfaction</div>
                 </div>
               </div>
             </div>
@@ -78,8 +78,8 @@ export function Hero() {
           {/* Right Column — Image + Floating Cards */}
           <div className="hidden lg:block relative">
             {/* Glow */}
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-10 left-0 w-48 h-48 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-10 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
             {/* Main image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[460px]">
@@ -90,7 +90,7 @@ export function Hero() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-primary/20" />
+
             </div>
 
             {/* Floating card — top left */}
