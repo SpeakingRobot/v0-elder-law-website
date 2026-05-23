@@ -15,7 +15,6 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/80 via-accent/60 to-accent/40" />
       </div>
 
       {/* Content */}
