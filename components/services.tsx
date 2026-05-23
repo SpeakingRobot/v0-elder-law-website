@@ -99,7 +99,7 @@ export function Services() {
                   {service.description}
                 </p>
 
-                {/* Learn more link */}
+                {/* CTA Link */}
                 <Link 
                   href="#contact" 
                   className={`inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
@@ -107,7 +107,7 @@ export function Services() {
                   }`}
                 >
                   <span className="relative">
-                    Learn More
+                    Get Started Today
                     <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
                       service.color === 'accent' ? 'bg-accent' : 'bg-primary'
                     }`} />
