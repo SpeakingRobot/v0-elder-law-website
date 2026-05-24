@@ -81,14 +81,14 @@ export function Mission() {
               {values.map((value, index) => (
                 <div 
                   key={index}
-                  className="flex items-start gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group"
+                  className="flex items-start gap-4 p-4 rounded-lg bg-accent hover:bg-accent/90 transition-colors group"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <value.icon className="h-6 w-6 text-accent" />
+                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center shrink-0">
+                    <value.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">{value.title}</h4>
-                    <p className="text-sm text-foreground/65">{value.description}</p>
+                    <h4 className="font-semibold text-white mb-1">{value.title}</h4>
+                    <p className="text-sm text-white/80">{value.description}</p>
                   </div>
                 </div>
               ))}
