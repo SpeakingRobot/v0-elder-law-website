@@ -128,6 +128,20 @@ export function Hero() {
 
         </div>
       </div>
+      {/* Legal Themed Divider */}
+      <div className="border-t border-border bg-background">
+        <div className="container mx-auto px-4 md:px-8 py-5">
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px flex-1 bg-border" />
+            <div className="flex items-center gap-5 text-foreground/30">
+              <Scale className="h-5 w-5" />
+              <span className="text-xs tracking-[0.3em] uppercase font-medium">Elder Law &bull; Estate Planning &bull; Asset Protection</span>
+              <Scale className="h-5 w-5" />
+            </div>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
