@@ -84,13 +84,12 @@ export function Hero() {
             {/* Main image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[460px]">
               <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
-                alt="Attorney Deep with clients"
+                src="/office-meeting.jpg"
+                alt="Attorney Deep consulting with clients"
                 fill
                 className="object-cover"
                 priority
               />
-
             </div>
 
             {/* Floating card — top left */}

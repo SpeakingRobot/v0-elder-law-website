@@ -9,21 +9,21 @@ export function Footer() {
           {/* About */}
           <div className="lg:col-span-2">
             <h3 className="font-serif text-xl font-semibold mb-4">
-              Law Offices
+              Attorney Deep
             </h3>
             <p className="text-white/80 leading-relaxed mb-6 max-w-md">
-              Dedicated to helping families in Nassau County and New York City 
+              Mr. Deep Chopra is dedicated to helping families in Nassau County 
               plan for the future through comprehensive estate planning, elder 
               law, and asset protection services.
             </p>
             <div className="space-y-2 text-sm text-white/80">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <a href="tel:+15551234567" className="hover:text-white transition-colors">(555) 123-4567</a>
+                <a href="tel:516-912-8111" className="hover:text-white transition-colors">516 912 8111</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:info@lawoffice.com" className="hover:text-white transition-colors">info@lawoffice.com</a>
+                <a href="mailto:Deep@AttorneyDeep.com" className="hover:text-white transition-colors">Deep@AttorneyDeep.com</a>
               </div>
             </div>
           </div>
@@ -42,20 +42,14 @@ export function Footer() {
 
           {/* Locations */}
           <div>
-            <h4 className="font-semibold mb-4">Locations</h4>
+            <h4 className="font-semibold mb-4">Office Location</h4>
             <div className="space-y-4 text-sm text-white/80">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-medium text-white">Nassau County</p>
-                  <p>Woodbury, NY 11797</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <div>
-                  <p className="font-medium text-white">New York City</p>
-                  <p>New York, NY 10022</p>
+                  <p className="font-medium text-white">Syosset</p>
+                  <p>50 Jackson Avenue</p>
+                  <p>Syosset, NY 11791</p>
                 </div>
               </div>
             </div>
@@ -64,7 +58,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
-          <p>&copy; {new Date().getFullYear()} Law Offices. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Attorney Deep. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link>

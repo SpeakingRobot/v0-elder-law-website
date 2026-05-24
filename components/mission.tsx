@@ -30,12 +30,11 @@ export function Mission() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-                alt="Professional attorney consulting with clients"
+                src="/deep-chopra.jpg"
+                alt="Mr. Deep Chopra, Attorney at Law"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
             </div>
             
             {/* Floating stats card */}
@@ -59,13 +58,17 @@ export function Mission() {
           <div className="lg:pl-8">
             <div className="inline-block mb-4">
               <span className="text-accent font-semibold text-sm tracking-widest uppercase">
-                Why Choose Us
+                Meet the Attorney
               </span>
             </div>
             
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground font-semibold mb-6 leading-tight">
-              Our Mission is to <span className="text-primary">Protect</span> What Matters Most
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground font-semibold mb-2 leading-tight">
+              My Mission
             </h2>
+            
+            <p className="text-2xl text-primary font-serif font-semibold mb-6">
+              — Mr. Deep Chopra
+            </p>
             
             <p className="text-lg text-foreground/70 leading-relaxed mb-8">
               Having a well-drafted estate plan ensures your estate passes to whom you want, when you want, 
