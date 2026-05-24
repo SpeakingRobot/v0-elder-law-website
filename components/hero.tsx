@@ -5,9 +5,10 @@ import { ArrowRight, Shield, Users, Award, FileText, Heart, Scale } from "lucide
 
 export function Hero() {
   return (
-    <section className="min-h-[90vh] flex items-center bg-background pt-16">
-      <div className="container mx-auto px-4 md:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <>
+      <section className="min-h-[90vh] flex items-center bg-background pt-16">
+        <div className="container mx-auto px-4 md:px-8 py-20">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Column — Text */}
           <div>
@@ -128,9 +129,11 @@ export function Hero() {
 
         </div>
       </div>
+      </section>
+
       {/* Legal Themed Divider */}
-      <div className="border-t border-border bg-background">
-        <div className="container mx-auto px-4 md:px-8 py-5">
+      <div className="w-full border-t border-border bg-background">
+        <div className="container mx-auto px-4 md:px-8 py-8">
           <div className="flex items-center justify-center gap-4">
             <div className="h-px flex-1 bg-border" />
             <div className="flex items-center gap-5 text-foreground/30">
@@ -142,6 +145,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   )
 }
