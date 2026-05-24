@@ -7,16 +7,10 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 const locations = [
   {
-    name: "Nassau County Office",
-    address: "123 Main Street, Suite 200",
-    city: "Woodbury, NY 11797",
-    phone: "(555) 123-4567",
-  },
-  {
-    name: "New York City Office",
-    address: "456 Park Avenue, Floor 10",
-    city: "New York, NY 10022",
-    phone: "(555) 987-6543",
+    name: "Syosset Office",
+    address: "50 Jackson Avenue",
+    city: "Syosset, NY 11791",
+    phone: "516 912 8111",
   },
 ]
 
@@ -88,7 +82,7 @@ export function Contact() {
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Office Locations */}
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-1 gap-6">
               {locations.map((location) => (
                 <div key={location.name} className="bg-card rounded-lg p-6 shadow-sm">
                   <h4 className="font-serif text-lg text-accent mb-4">{location.name}</h4>
@@ -125,8 +119,8 @@ export function Contact() {
                 </div>
                 <div className="flex items-center gap-3 pt-2">
                   <Mail className="h-5 w-5 text-primary shrink-0" />
-                  <a href="mailto:info@lawoffice.com" className="text-muted-foreground hover:text-foreground transition-colors">
-                    info@lawoffice.com
+                  <a href="mailto:Deep@AttorneyDeep.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Deep@AttorneyDeep.com
                   </a>
                 </div>
               </div>
