@@ -56,17 +56,17 @@ export function Mission() {
 
           {/* Right - Content */}
           <div className="lg:pl-8">
-            <div className="inline-block mb-4">
-              <span className="text-accent font-semibold text-sm tracking-widest uppercase">
+            <div className="inline-block mb-6">
+              <span className="text-foreground/50 font-semibold text-xs tracking-widest uppercase">
                 Meet the Attorney
               </span>
             </div>
             
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground font-semibold mb-2 leading-tight">
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground font-semibold mb-4 leading-tight">
               My Mission
             </h2>
             
-            <p className="text-2xl text-primary font-serif font-semibold mb-6">
+            <p className="text-2xl text-primary font-serif font-semibold mb-8">
               — Mr. Deep Chopra
             </p>
             
