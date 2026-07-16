@@ -1,6 +1,6 @@
 "use client"
 
-import { FileText, Scale, Heart, Users, Building2, ShieldCheck, ArrowRight } from "lucide-react"
+import { FileText, Scale, Heart, Users, Building2, ShieldCheck, Home, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 const services = [
@@ -39,6 +39,12 @@ const services = [
     title: "Incapacity Planning",
     description: "Ensure your wishes are followed with powers of attorney, healthcare directives, and living wills.",
     color: "primary",
+  },
+  {
+    icon: Home,
+    title: "Real Estate Transactions",
+    description: "Expert guidance for commercial and residential real estate transactions to protect your interests.",
+    color: "accent",
   },
 ]
 

@@ -66,8 +66,12 @@ export function Mission() {
               My Mission
             </h2>
             
-            <p className="text-2xl text-primary font-serif font-semibold mb-8">
+            <p className="text-2xl text-primary font-serif font-semibold mb-2">
               — Mr. Deep Chopra
+            </p>
+            
+            <p className="text-sm text-foreground/50 mb-8 italic">
+              Advocate admitted to practice law in the High Courts of Mumbai and Goa, India
             </p>
             
             <p className="text-lg text-foreground/70 leading-relaxed mb-8">
