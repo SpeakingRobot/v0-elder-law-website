@@ -23,11 +23,14 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex flex-col">
             <span className="font-serif text-xl font-bold tracking-tight">
-              <span className="text-accent">Attorney</span>
-              <span className="text-primary"> Deep</span>
+              <span className="text-accent">Deep</span>
+              <span className="text-primary"> Chopra, Esq.</span>
             </span>
-            <span className="text-xs text-muted-foreground tracking-widest uppercase">
-              Elder Law & Estate Planning
+            <span className="text-xs text-muted-foreground tracking-widest uppercase font-medium">
+              Attorney At Law
+            </span>
+            <span className="text-xs text-muted-foreground tracking-widest uppercase mt-1 leading-tight max-w-xs">
+              Estate & Elder Law Planning • Wills & Trusts • Probate • Real Estate
             </span>
           </Link>
 
@@ -47,9 +50,9 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+15551234567" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:516-912-8111" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Phone className="h-4 w-4" />
-              (555) 123-4567
+              516 912 8111
             </a>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="#contact">Free Consultation</Link>
