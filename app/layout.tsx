@@ -5,13 +5,13 @@ import './globals.css'
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
-  variable: '--font-serif',
+  variable: '--font-playfair',
   display: 'swap',
 });
 
 const sourceSans = Source_Sans_3({ 
   subsets: ["latin"],
-  variable: '--font-sans',
+  variable: '--font-source-sans',
   display: 'swap',
 });
 

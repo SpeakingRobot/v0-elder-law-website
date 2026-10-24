@@ -23,22 +23,23 @@ const values = [
 
 export function Mission() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="section-spacing overflow-hidden bg-card">
+      <div className="site-container">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           {/* Left - Image with overlay card */}
-          <div className="relative">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative mx-auto w-full max-w-md pb-7 pr-5 lg:max-w-none">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-secondary shadow-lg shadow-accent/5">
               <Image
                 src="/deep-chopra.jpg"
                 alt="Mr. Deep Chopra, Attorney at Law"
                 fill
+                sizes="(min-width: 1024px) 40vw, 85vw"
                 className="object-cover"
               />
             </div>
             
             {/* Floating stats card */}
-            <div className="absolute -bottom-8 -right-8 bg-white rounded-xl shadow-xl p-6 border border-border">
+            <div className="absolute bottom-0 right-0 rounded-xl border border-border bg-card p-5 shadow-lg shadow-accent/5 sm:p-6">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-2xl font-serif font-bold text-primary">25+</span>
@@ -51,52 +52,52 @@ export function Mission() {
             </div>
 
             {/* Decorative element */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-accent/10 rounded-full blur-2xl" />
+            <div aria-hidden="true" className="absolute -left-4 top-8 bottom-14 w-4 rounded-l-md bg-primary/10" />
           </div>
 
           {/* Right - Content */}
-          <div className="lg:pl-8">
-            <div className="inline-block mb-6">
-              <span className="text-foreground/50 font-semibold text-xs tracking-widest uppercase">
+          <div>
+            <div>
+              <span className="section-kicker">
                 Meet the Attorney
               </span>
             </div>
             
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground font-semibold mb-4 leading-tight">
+            <h2 className="section-heading mb-4">
               My Mission
             </h2>
             
-            <p className="text-2xl text-primary font-serif font-semibold mb-3">
+            <p className="mb-4 font-serif text-xl font-medium text-primary">
               — Mr. Deep Chopra
             </p>
             
-            <p className="text-sm text-foreground/50 mb-1 italic">
+            <p className="mb-1 text-sm leading-relaxed text-muted-foreground">
               Attorney At Law admitted to practice law in New York State, USA
             </p>
             
-            <p className="text-sm text-foreground/50 mb-8 italic">
+            <p className="mb-7 text-sm leading-relaxed text-muted-foreground">
               Advocate admitted to practice law in the High Courts of Mumbai and Goa, India
             </p>
             
-            <p className="text-lg text-foreground/70 leading-relaxed mb-8">
+            <p className="mb-7 border-l-2 border-primary/30 pl-5 text-lg leading-relaxed text-muted-foreground">
               Having a well-drafted estate plan ensures your estate passes to whom you want, when you want, 
               in the manner you choose. Your family won&apos;t endure costly probate, and the government 
               won&apos;t take what you&apos;ve spent a lifetime building.
             </p>
 
             {/* Value cards */}
-            <div className="space-y-4 mb-10">
+            <div className="mb-8 divide-y divide-border/70">
               {values.map((value, index) => (
                 <div 
                   key={index}
-                  className="flex items-start gap-4 p-4 rounded-lg bg-accent hover:bg-accent/90 transition-colors group"
+                  className="flex items-start gap-4 py-4"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center shrink-0">
-                    <value.icon className="h-6 w-6 text-primary" />
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent/5">
+                    <value.icon aria-hidden="true" className="h-5 w-5 text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">{value.title}</h4>
-                    <p className="text-sm text-white/80">{value.description}</p>
+                    <h3 className="mb-1 font-semibold text-accent">{value.title}</h3>
+                    <p className="text-sm text-muted-foreground">{value.description}</p>
                   </div>
                 </div>
               ))}
@@ -105,7 +106,7 @@ export function Mission() {
             <Button 
               asChild 
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8"
+              className="h-12 rounded-lg bg-primary px-7 font-semibold text-primary-foreground hover:bg-primary/90"
             >
               <Link href="#services" className="flex items-center gap-2">
                 Explore Our Services
