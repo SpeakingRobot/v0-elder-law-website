@@ -84,7 +84,7 @@ export function TrustsEstates() {
   return (
     <section id="resources" className="section-spacing bg-card">
       <div className="site-container">
-        <div className="mb-12 text-center md:mb-14">
+        <div data-reveal className="mb-12 text-center md:mb-14">
           <span className="section-kicker">
             Our Expertise
           </span>
@@ -96,7 +96,7 @@ export function TrustsEstates() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div data-reveal className="max-w-6xl mx-auto">
           {/* Tab Navigation */}
           <div role="tablist" aria-label="Trusts and estates expertise" className="mb-7 grid gap-3 lg:grid-cols-3">
             {tabs.map((tab, index) => {
@@ -124,7 +124,7 @@ export function TrustsEstates() {
                     tabRefs.current[nextIndex]?.focus()
                   }}
                   className={cn(
-                    "group flex min-w-0 items-center gap-3 rounded-xl border p-4 text-left transition-colors sm:p-5",
+                    "expertise-tab group flex min-w-0 items-center gap-3 rounded-xl border p-4 text-left sm:p-5",
                     isActive
                       ? "border-accent bg-accent text-accent-foreground shadow-sm"
                       : "border-border bg-background hover:border-primary/30 hover:bg-secondary/60"
@@ -158,7 +158,7 @@ export function TrustsEstates() {
           </div>
 
           {/* Content Area */}
-          <div id={`estate-panel-${activeTab}`} role="tabpanel" aria-labelledby={`estate-tab-${activeTab}`} tabIndex={0} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+          <div key={activeTab} id={`estate-panel-${activeTab}`} role="tabpanel" aria-labelledby={`estate-tab-${activeTab}`} tabIndex={0} className="expertise-panel overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Highlights Sidebar */}
               <div className="border-b border-border bg-accent/5 p-7 md:col-span-2 md:border-b-0 md:border-r lg:p-10">

@@ -26,8 +26,8 @@ export function CommitteeAnnouncement() {
   return (
     <section id="professional-milestone" aria-labelledby="committee-announcement-title" className="section-spacing border-b border-border/60 bg-background">
       <div className="site-container">
-        <div className="grid overflow-hidden rounded-2xl border border-border/80 bg-card shadow-lg shadow-accent/[0.03] lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="flex items-center justify-center bg-accent/5 p-6 sm:p-8 lg:p-10">
+        <div className="milestone-card grid overflow-hidden rounded-2xl border border-border/80 bg-card shadow-lg shadow-accent/[0.03] lg:grid-cols-[0.85fr_1.15fr]">
+          <div data-reveal className="milestone-art flex items-center justify-center bg-accent/5 p-6 sm:p-8 lg:p-10">
             <div className="relative aspect-[800/1017] w-full max-w-sm overflow-hidden rounded-lg shadow-md">
               <Image
                 src="/nassau-bar-chair.png"
@@ -39,7 +39,7 @@ export function CommitteeAnnouncement() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center px-7 py-10 sm:px-10 lg:py-12">
+          <div data-reveal data-reveal-order="1" className="flex flex-col justify-center px-7 py-10 sm:px-10 lg:py-12">
             <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-3.5 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary sm:text-xs">
               <Award aria-hidden="true" className="h-4 w-4" /> Professional Milestone
             </div>

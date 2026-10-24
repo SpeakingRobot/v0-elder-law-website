@@ -27,8 +27,8 @@ export function Mission() {
       <div className="site-container">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           {/* Left - Image with overlay card */}
-          <div className="relative mx-auto w-full max-w-md pb-7 pr-5 lg:max-w-none">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-secondary shadow-lg shadow-accent/5">
+          <div data-reveal className="portrait-frame mx-auto w-full max-w-md pb-7 pr-5 lg:max-w-none">
+            <div className="portrait-photo relative aspect-[4/5] overflow-hidden rounded-2xl bg-secondary shadow-lg shadow-accent/5">
               <Image
                 src="/deep-chopra.jpg"
                 alt="Mr. Deep Chopra, Attorney at Law"
@@ -39,7 +39,7 @@ export function Mission() {
             </div>
             
             {/* Floating stats card */}
-            <div className="absolute bottom-0 right-0 rounded-xl border border-border bg-card p-5 shadow-lg shadow-accent/5 sm:p-6">
+            <div className="absolute bottom-0 right-0 rounded-xl border border-border border-b-[3px] border-b-primary bg-card p-5 shadow-lg shadow-accent/5 sm:p-6">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-2xl font-serif font-bold text-primary">25+</span>
@@ -56,7 +56,7 @@ export function Mission() {
           </div>
 
           {/* Right - Content */}
-          <div>
+          <div data-reveal data-reveal-order="1">
             <div>
               <span className="section-kicker">
                 Meet the Attorney
@@ -90,7 +90,7 @@ export function Mission() {
               {values.map((value, index) => (
                 <div 
                   key={index}
-                  className="flex items-start gap-4 py-4"
+                  className="mission-value flex items-start gap-4 py-4"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent/5">
                     <value.icon aria-hidden="true" className="h-5 w-5 text-accent" />
@@ -106,7 +106,7 @@ export function Mission() {
             <Button 
               asChild 
               size="lg"
-              className="h-12 rounded-lg bg-primary px-7 font-semibold text-primary-foreground hover:bg-primary/90"
+              className="button-polish h-12 rounded-lg bg-primary px-7 font-semibold text-primary-foreground hover:bg-primary/90"
             >
               <Link href="#services" className="flex items-center gap-2">
                 Explore Our Services

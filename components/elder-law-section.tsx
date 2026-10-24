@@ -36,20 +36,23 @@ const features = [
 
 export function ElderLawSection() {
   return (
-    <section className="section-spacing overflow-hidden bg-accent text-accent-foreground">
+    <section className="elder-section section-spacing bg-accent text-accent-foreground">
       <div className="site-container">
         {/* Feature Cards Row */}
         <div className="mb-12 grid grid-cols-2 gap-4 border-b border-white/15 pb-12 lg:mb-16 lg:grid-cols-4">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group rounded-xl border border-white/15 bg-white/5 p-4 text-center transition-colors hover:bg-white/10 sm:p-6"
+              data-reveal
+              data-reveal-order={index}
             >
-              <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
-                <feature.icon aria-hidden="true" className="h-5 w-5 text-white" />
+              <div className="elder-feature group h-full rounded-xl border border-white/15 bg-white/5 p-4 text-center hover:bg-white/10 sm:p-6">
+                <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
+                  <feature.icon aria-hidden="true" className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="mb-2 text-sm font-semibold text-white sm:text-base">{feature.title}</h3>
+                <p className="text-xs leading-6 text-white/70 sm:text-sm">{feature.description}</p>
               </div>
-              <h3 className="mb-2 text-sm font-semibold text-white sm:text-base">{feature.title}</h3>
-              <p className="text-xs leading-6 text-white/70 sm:text-sm">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -57,7 +60,7 @@ export function ElderLawSection() {
         {/* Main Content */}
         <div className="grid items-start gap-10 lg:grid-cols-5 lg:gap-16">
           {/* Left Content - 3 columns */}
-          <div className="lg:col-span-3">
+          <div data-reveal className="lg:col-span-3">
             <h2 className="mb-7 font-serif text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-tight tracking-tight text-white">
               What to Expect from an Elder Law Attorney
             </h2>
@@ -94,7 +97,7 @@ export function ElderLawSection() {
           </div>
 
           {/* Right Card - 2 columns */}
-          <div className="lg:col-span-2">
+          <div data-reveal data-reveal-order="1" className="lg:col-span-2">
             <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-card p-6 shadow-lg sm:p-8">
               <h3 className="mb-7 font-serif text-2xl leading-snug text-accent">
                 How Can an Elder Law Attorney Help?

@@ -7,6 +7,7 @@ import { TrustsEstates } from "@/components/trusts-estates"
 import { ElderLawSection } from "@/components/elder-law-section"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { PageMotion } from "@/components/page-motion"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <CommitteeAnnouncement />
       <Contact />
       <Footer />
+      <PageMotion />
     </main>
   )
 }
