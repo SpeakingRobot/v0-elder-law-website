@@ -1,5 +1,3 @@
-"use client"
-
 import { FileText, Scale, Heart, Users, Building2, ShieldCheck, Home, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
@@ -50,42 +48,37 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-background relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
-      </div>
-
-      <div className="container mx-auto px-4 relative">
+    <section id="services" className="section-spacing relative overflow-hidden border-y border-border/60 bg-secondary/50">
+      <div className="site-container relative">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <span className="inline-block text-accent font-semibold text-sm tracking-widest uppercase mb-4">
+        <div className="mb-12 text-center md:mb-14">
+          <span className="section-kicker">
             What We Do
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">
+          <h2 className="section-heading mb-4">
             Practice Areas
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="section-lead">
             Comprehensive legal services tailored to protect you and your loved ones
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div 
               key={service.title}
-              className="group relative"
+              className={`group relative ${index === services.length - 1 ? "md:col-span-2 lg:col-span-3" : ""}`}
             >
               {/* Card */}
-              <div className="relative bg-card rounded-xl p-8 h-full border border-border hover:border-accent/40 transition-all duration-500 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1">
+              <div className={`relative flex h-full flex-col rounded-xl border border-border/80 bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-accent/5 ${index === services.length - 1 ? "md:flex-row md:items-center md:gap-7" : ""}`}>
                 {/* Number badge */}
-                <span className="absolute top-6 right-6 text-6xl font-serif font-bold text-muted/30 select-none">
+                <span aria-hidden="true" className={`absolute right-6 top-6 select-none font-serif text-3xl text-accent/15 ${index === services.length - 1 ? "md:hidden" : ""}`}>
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 
                 {/* Icon */}
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 ${
+                <div className={`mb-5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${index === services.length - 1 ? "md:mb-0" : ""} ${
                   service.color === 'accent' 
                     ? 'bg-accent/10 group-hover:bg-accent group-hover:shadow-lg group-hover:shadow-accent/25' 
                     : 'bg-primary/10 group-hover:bg-primary group-hover:shadow-lg group-hover:shadow-primary/25'
@@ -98,17 +91,19 @@ export function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-serif text-xl text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {service.description}
-                </p>
+                <div className="flex flex-1 flex-col">
+                  <h3 className="mb-3 font-serif text-[22px] leading-snug text-accent">
+                    {service.title}
+                  </h3>
+                  <p className={`text-[15px] leading-7 text-muted-foreground ${index === services.length - 1 ? "mb-6 md:mb-0" : "mb-6 flex-1"}`}>
+                    {service.description}
+                  </p>
+                </div>
 
                 {/* CTA Link */}
                 <Link 
                   href="#contact" 
-                  className={`inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
+                  className={`mt-auto inline-flex w-fit shrink-0 items-center gap-2 text-sm font-semibold transition-all duration-300 ${index === services.length - 1 ? "md:my-auto" : ""} ${
                     service.color === 'accent' ? 'text-accent' : 'text-primary'
                   }`}
                 >
@@ -126,13 +121,13 @@ export function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-6">
             Not sure which service you need? We&apos;re here to help.
           </p>
           <Link 
             href="#contact"
-            className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent/90"
           >
             Schedule a Free Consultation
             <ArrowRight className="h-5 w-5" />

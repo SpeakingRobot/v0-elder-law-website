@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { FileText, Settings, Scale, ChevronRight, CheckCircle2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -78,47 +78,65 @@ const tabs = [
 
 export function TrustsEstates() {
   const [activeTab, setActiveTab] = useState("planning")
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
   const activeData = tabs.find((t) => t.id === activeTab)!
 
   return (
-    <section id="resources" className="py-20 md:py-28 bg-secondary/50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-3">
+    <section id="resources" className="section-spacing bg-card">
+      <div className="site-container">
+        <div className="mb-12 text-center md:mb-14">
+          <span className="section-kicker">
             Our Expertise
           </span>
-          <h2 className="font-serif text-accent text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-balance">
+          <h2 className="section-heading mb-4">
             Trusts &amp; Estates
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="section-lead">
             Understanding the three major components of Trust &amp; Estate practice
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
           {/* Tab Navigation */}
-          <div className="flex flex-col md:flex-row gap-4 mb-10">
-            {tabs.map((tab) => {
+          <div role="tablist" aria-label="Trusts and estates expertise" className="mb-7 grid gap-3 lg:grid-cols-3">
+            {tabs.map((tab, index) => {
               const Icon = tab.icon
               const isActive = activeTab === tab.id
               return (
                 <button
                   key={tab.id}
+                  ref={(element) => { tabRefs.current[index] = element }}
+                  id={`estate-tab-${tab.id}`}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`estate-panel-${tab.id}`}
+                  tabIndex={isActive ? 0 : -1}
                   onClick={() => setActiveTab(tab.id)}
+                  onKeyDown={(event) => {
+                    let nextIndex = index
+                    if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length
+                    else if (event.key === "ArrowLeft") nextIndex = (index + tabs.length - 1) % tabs.length
+                    else if (event.key === "Home") nextIndex = 0
+                    else if (event.key === "End") nextIndex = tabs.length - 1
+                    else return
+                    event.preventDefault()
+                    setActiveTab(tabs[nextIndex].id)
+                    tabRefs.current[nextIndex]?.focus()
+                  }}
                   className={cn(
-                    "flex-1 flex items-center gap-4 p-5 rounded-xl transition-all duration-300 text-left group",
+                    "group flex min-w-0 items-center gap-3 rounded-xl border p-4 text-left transition-colors sm:p-5",
                     isActive
-                      ? "bg-accent text-accent-foreground shadow-lg"
-                      : "bg-card hover:bg-card/80 border border-border hover:border-primary/30"
+                      ? "border-accent bg-accent text-accent-foreground shadow-sm"
+                      : "border-border bg-background hover:border-primary/30 hover:bg-secondary/60"
                   )}
                 >
                   <div
                     className={cn(
-                      "w-12 h-12 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                      "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors",
                       isActive ? "bg-white/20" : "bg-primary/10"
                     )}
                   >
-                    <Icon className={cn("w-6 h-6", isActive ? "text-white" : "text-primary")} />
+                    <Icon aria-hidden="true" className={cn("h-5 w-5", isActive ? "text-white" : "text-primary")} />
                   </div>
                   <div className="flex-1">
                     <h3 className={cn("font-semibold text-lg", !isActive && "text-foreground")}>
@@ -140,10 +158,10 @@ export function TrustsEstates() {
           </div>
 
           {/* Content Area */}
-          <div className="bg-card rounded-2xl shadow-sm border border-border overflow-hidden">
+          <div id={`estate-panel-${activeTab}`} role="tabpanel" aria-labelledby={`estate-tab-${activeTab}`} tabIndex={0} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="grid md:grid-cols-5 gap-0">
               {/* Highlights Sidebar */}
-              <div className="md:col-span-2 bg-accent/5 p-6 md:p-8 border-b md:border-b-0 md:border-r border-border">
+              <div className="border-b border-border bg-accent/5 p-7 md:col-span-2 md:border-b-0 md:border-r lg:p-10">
                 <h3 className="font-serif text-2xl md:text-3xl text-accent mb-2">
                   {activeData.title}
                 </h3>
@@ -161,17 +179,17 @@ export function TrustsEstates() {
               </div>
 
               {/* Main Content */}
-              <div className="md:col-span-3 p-6 md:p-8">
+              <div className="p-7 md:col-span-3 lg:p-10">
                 <div className="space-y-8">
                   {activeData.content.map((block, i) => (
                     <div key={i}>
                       <h4 className="font-serif text-xl text-accent mb-3 flex items-center gap-2">
-                        <span className="w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
                           {i + 1}
                         </span>
                         {block.heading}
                       </h4>
-                      <p className="text-muted-foreground leading-relaxed pl-10">
+                      <p className="text-[15px] leading-7 text-muted-foreground sm:pl-10">
                         {block.text}
                       </p>
                     </div>

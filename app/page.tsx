@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
+import { CommitteeAnnouncement } from "@/components/committee-announcement"
 import { Mission } from "@/components/mission"
 import { Services } from "@/components/services"
 import { TrustsEstates } from "@/components/trusts-estates"
@@ -16,6 +17,7 @@ export default function Home() {
       <Services />
       <TrustsEstates />
       <ElderLawSection />
+      <CommitteeAnnouncement />
       <Contact />
       <Footer />
     </main>
