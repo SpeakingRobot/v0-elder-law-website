@@ -18,7 +18,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-spacing bg-secondary/60">
       <div className="site-container">
-        <div className="mb-12 text-center md:mb-14">
+        <div data-reveal className="mb-12 text-center md:mb-14">
           <h2 className="section-heading mb-4">
             Contact Us
           </h2>
@@ -29,7 +29,7 @@ export function Contact() {
 
         <div className="grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
           {/* Contact Form */}
-          <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-9 lg:p-10">
+          <div data-reveal className="contact-form-card rounded-2xl border border-border/80 bg-card p-6 shadow-sm sm:p-9 lg:p-10">
             <h3 className="mb-8 font-serif text-2xl leading-snug text-accent">
               Request a Free Consultation
             </h3>
@@ -73,7 +73,7 @@ export function Contact() {
               </div>
               <Button 
                 type="submit" 
-                className="h-12 w-full rounded-lg bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
+                className="button-polish h-12 w-full rounded-lg bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
               >
                 Submit Request
               </Button>
@@ -81,7 +81,7 @@ export function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="rounded-2xl bg-accent p-6 text-white shadow-sm sm:p-9 lg:p-10">
+          <div data-reveal data-reveal-order="1" className="contact-details rounded-2xl bg-accent p-6 text-white shadow-sm sm:p-9 lg:p-10">
             {/* Office Locations */}
             <div className="grid gap-6">
               {locations.map((location) => (

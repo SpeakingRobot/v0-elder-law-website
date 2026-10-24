@@ -54,7 +54,7 @@ export function Header() {
               <Phone className="h-4 w-4" />
               516 912 8111
             </a>
-            <Button asChild className="h-11 rounded-lg bg-primary px-5 font-semibold text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="button-polish h-11 rounded-lg bg-primary px-5 font-semibold text-primary-foreground hover:bg-primary/90">
               <Link href="#contact">Free Consultation</Link>
             </Button>
           </div>
@@ -77,7 +77,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div id="mobile-navigation" className="border-t border-border py-4 xl:hidden">
+          <div id="mobile-navigation" className="mobile-menu-enter border-t border-border py-4 xl:hidden">
             <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link

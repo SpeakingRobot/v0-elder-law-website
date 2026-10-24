@@ -48,10 +48,10 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="section-spacing relative overflow-hidden border-y border-border/60 bg-secondary/50">
+    <section id="services" className="practice-section section-spacing relative overflow-hidden border-y border-border/60 bg-secondary/50">
       <div className="site-container relative">
         {/* Section Header */}
-        <div className="mb-12 text-center md:mb-14">
+        <div data-reveal className="mb-12 text-center md:mb-14">
           <span className="section-kicker">
             What We Do
           </span>
@@ -68,10 +68,12 @@ export function Services() {
           {services.map((service, index) => (
             <div 
               key={service.title}
+              data-reveal
+              data-reveal-order={index % 3}
               className={`group relative ${index === services.length - 1 ? "md:col-span-2 lg:col-span-3" : ""}`}
             >
               {/* Card */}
-              <div className={`relative flex h-full flex-col rounded-xl border border-border/80 bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-accent/5 ${index === services.length - 1 ? "md:flex-row md:items-center md:gap-7" : ""}`}>
+              <div className={`service-card relative flex h-full flex-col rounded-xl border border-border/80 bg-card p-7 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-accent/5 ${index === services.length - 1 ? "service-card--feature border-l-[3px] border-l-accent md:flex-row md:items-center md:gap-7" : ""}`}>
                 {/* Number badge */}
                 <span aria-hidden="true" className={`absolute right-6 top-6 select-none font-serif text-3xl text-accent/15 ${index === services.length - 1 ? "md:hidden" : ""}`}>
                   {String(index + 1).padStart(2, '0')}
@@ -121,13 +123,13 @@ export function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 text-center">
+        <div data-reveal className="mt-12 text-center">
           <p className="text-muted-foreground mb-6">
             Not sure which service you need? We&apos;re here to help.
           </p>
           <Link 
             href="#contact"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent/90"
+            className="button-polish inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent/90"
           >
             Schedule a Free Consultation
             <ArrowRight className="h-5 w-5" />
